@@ -14,10 +14,26 @@ interface UserProfile {
   product: string;
   type: string;
   uri: string;
+  name: string;
+  artists: [string, Artists[]];
+  album: { name: string };
 }
 
 interface Image {
   url: string;
   height: number;
   width: number;
+}
+
+interface Album {
+  images: { url: string };
+  name: string;
+}
+
+interface Pic {
+  url: string;
+}
+
+interface Artists {
+  name: string;
 }
