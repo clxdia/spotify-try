@@ -17,6 +17,8 @@ interface UserProfile {
   name: string;
   artists: [string, Artists[]];
   album: { name: string };
+  items: any;
+  0: any;
 }
 
 interface Image {
@@ -32,6 +34,10 @@ interface Album {
 
 interface Pic {
   url: string;
+}
+
+interface Items {
+  name: string;
 }
 
 interface Artists {

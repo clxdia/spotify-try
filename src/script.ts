@@ -11,6 +11,7 @@ if (!code) {
 } else {
   const accessToken = await getAccessToken(clientId, code);
   const profile = await fetchProfile(accessToken);
+  console.log(profile.items[0].album.album_type);
   populateUI(profile);
 }
 
@@ -27,7 +28,6 @@ async function fetchProfile(code: string): Promise<UserProfile> {
 }
 
 function populateUI(profile: UserProfile) {
-  document.getElementById("displayName")!.innerText = profile.name;
-
-  document.getElementById("email")!.innerText = profile.album.name;
+  document.getElementById("displayName")!.innerText =
+    profile.items[0].album.album_type;
 }
