@@ -23,8 +23,10 @@ export async function getAccessToken(clientId: string, code: string) {
   params.append("grant_type", "authorization_code");
   params.append("code", code);
   params.append("redirect_uri", "https://spotify-try.vercel.app/callback");
-  // https://spotify-try.vercel.app/callback
+  params.append("scope", "user-top-read");
   params.append("code_verifier", verifier!);
+  // https://spotify-try.vercel.app/callback
+  // Http://localhost:3000/callback
 
   const result = await fetch("https://accounts.spotify.com/api/token", {
     method: "POST",

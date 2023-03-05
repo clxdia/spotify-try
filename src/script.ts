@@ -11,7 +11,7 @@ if (!code) {
 } else {
   const accessToken = await getAccessToken(clientId, code);
   const profile = await fetchProfile(accessToken);
-  console.log(profile.items[0].album.album_type);
+  console.log(profile.items);
   populateUI(profile);
 }
 
